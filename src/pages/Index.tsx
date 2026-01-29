@@ -1,13 +1,7 @@
-import { useState } from "react";
 import kultLogo from "@/assets/kult-logo.png";
 import { Mail } from "lucide-react";
-import VersionToggle from "@/components/VersionToggle";
-import IndexV2 from "./IndexV2";
-import IndexV3 from "./IndexV3";
 
-type Version = "A" | "B" | "C";
-
-const VersionA = () => {
+const Index = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Hero Section */}
@@ -26,7 +20,7 @@ const VersionA = () => {
           className="animate-fade-in-up text-2xl md:text-3xl lg:text-4xl font-light text-foreground text-center tracking-wide opacity-0"
           style={{ animationDelay: "200ms" }}
         >
-          Shaping the future of technology
+          Kształtujemy przyszłość technologii
         </h1>
 
         {/* Brief Introduction */}
@@ -34,8 +28,8 @@ const VersionA = () => {
           className="animate-fade-in-up mt-8 max-w-xl text-center text-muted-foreground text-base md:text-lg leading-relaxed opacity-0"
           style={{ animationDelay: "400ms" }}
         >
-          We craft innovative solutions that push the boundaries of what's
-          possible, transforming ideas into reality.
+          Tworzymy innowacyjne rozwiązania, które przesuwają granice możliwości,
+          przekształcając pomysły w rzeczywistość.
         </p>
 
         {/* Contact Section */}
@@ -58,32 +52,10 @@ const VersionA = () => {
         style={{ animationDelay: "800ms" }}
       >
         <p className="text-xs text-muted-foreground tracking-wide">
-          © {new Date().getFullYear()} Kult Technology. All rights reserved.
+          © {new Date().getFullYear()} Kult Technology. Wszelkie prawa zastrzeżone.
         </p>
       </footer>
     </div>
-  );
-};
-
-const Index = () => {
-  const [version, setVersion] = useState<Version>("A");
-
-  const renderVersion = () => {
-    switch (version) {
-      case "A":
-        return <VersionA />;
-      case "B":
-        return <IndexV2 />;
-      case "C":
-        return <IndexV3 />;
-    }
-  };
-
-  return (
-    <>
-      <VersionToggle version={version} onToggle={setVersion} />
-      {renderVersion()}
-    </>
   );
 };
 
