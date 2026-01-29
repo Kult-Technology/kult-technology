@@ -1,7 +1,10 @@
+import { useState } from "react";
 import kultLogo from "@/assets/kult-logo.png";
 import { Mail } from "lucide-react";
+import VersionToggle from "@/components/VersionToggle";
+import IndexV2 from "./IndexV2";
 
-const Index = () => {
+const VersionA = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Hero Section */}
@@ -56,6 +59,17 @@ const Index = () => {
         </p>
       </footer>
     </div>
+  );
+};
+
+const Index = () => {
+  const [version, setVersion] = useState<"A" | "B">("A");
+
+  return (
+    <>
+      <VersionToggle version={version} onToggle={setVersion} />
+      {version === "A" ? <VersionA /> : <IndexV2 />}
+    </>
   );
 };
 
