@@ -3,6 +3,9 @@ import kultLogo from "@/assets/kult-logo.png";
 import { Mail } from "lucide-react";
 import VersionToggle from "@/components/VersionToggle";
 import IndexV2 from "./IndexV2";
+import IndexV3 from "./IndexV3";
+
+type Version = "A" | "B" | "C";
 
 const VersionA = () => {
   return (
@@ -63,12 +66,23 @@ const VersionA = () => {
 };
 
 const Index = () => {
-  const [version, setVersion] = useState<"A" | "B">("A");
+  const [version, setVersion] = useState<Version>("A");
+
+  const renderVersion = () => {
+    switch (version) {
+      case "A":
+        return <VersionA />;
+      case "B":
+        return <IndexV2 />;
+      case "C":
+        return <IndexV3 />;
+    }
+  };
 
   return (
     <>
       <VersionToggle version={version} onToggle={setVersion} />
-      {version === "A" ? <VersionA /> : <IndexV2 />}
+      {renderVersion()}
     </>
   );
 };

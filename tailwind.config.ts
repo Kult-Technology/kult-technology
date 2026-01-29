@@ -92,6 +92,10 @@ export default {
           "0%": { opacity: "0", filter: "blur(8px)" },
           "100%": { opacity: "1", filter: "blur(0)" },
         },
+        "glow-pulse": {
+          "0%, 100%": { filter: "brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.3))" },
+          "50%": { filter: "brightness(0) invert(1) drop-shadow(0 0 20px rgba(255,255,255,0.5))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -101,6 +105,7 @@ export default {
         "slide-in-left": "slide-in-left 0.7s ease-out forwards",
         "slide-in-right": "slide-in-right 0.7s ease-out forwards",
         "blur-in": "blur-in 0.8s ease-out forwards",
+        "glow-pulse": "glow-pulse 3s ease-in-out infinite",
       },
     },
   },
