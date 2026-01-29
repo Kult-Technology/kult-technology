@@ -1,73 +1,70 @@
 
 
-## Alternative Landing Page — Version B
+## Version C — Dark Mode Landing Page
 
-A different take on the Kult Technology landing page with a more editorial, asymmetric layout and refined visual touches.
-
----
-
-### Current Version (A) vs New Version (B)
-
-| Aspect | Version A (Current) | Version B (Alternative) |
-|--------|---------------------|------------------------|
-| Layout | Centered, vertical stack | Asymmetric, editorial grid |
-| Logo position | Top center | Left-aligned, larger |
-| Animation | Staggered fade-in up | Slide-in from sides + blur reveal |
-| Typography | Single weight | Mixed weights, larger contrast |
-| Whitespace | Generous, balanced | Dramatic, intentional gaps |
-| Footer | Bottom center | Integrated with content |
+A sleek, premium dark theme that gives Kult Technology a sophisticated tech-forward presence while maintaining the centered, minimal layout you prefer from Version A.
 
 ---
 
-### Version B Design Details
+### Version Comparison
 
-**Layout Approach:**
-- Split-screen aesthetic with logo on the left side
-- Tagline and intro text on the right, creating visual tension
-- More dramatic use of negative space
-- Content positioned toward the upper-third (less perfectly centered)
+| Aspect | Version A | Version C (New) |
+|--------|-----------|-----------------|
+| Background | White/light gray | Near-black (#0A0A0A) |
+| Typography | Black text | White/gray text |
+| Logo treatment | Standard | Inverted or white version |
+| Accents | None | Subtle glow effects |
+| Animation | Fade-in up | Fade-in with soft glow pulse |
+| Overall feel | Clean, airy | Premium, mysterious |
+
+---
+
+### Design Details
+
+**Color Palette:**
+- Deep black background (#0A0A0A or #0D0D0D)
+- Pure white for headings
+- Soft gray (#9A9A9A) for body text
+- Optional: subtle accent color for the email link hover
 
 **Visual Elements:**
-- Larger logo (takes up more visual real estate)
-- Bolder tagline with tighter letter-spacing
-- A subtle horizontal line or geometric divider
-- Email link styled as a minimal button or pill
+- Same centered layout as Version A
+- Subtle gradient overlay or vignette for depth
+- Email link with a soft glow on hover
+- Optional: very subtle grid pattern or noise texture
 
-**Animation Style:**
-- Logo slides in from left with a blur-to-sharp effect
-- Text elements slide in from right
-- Creates a "meeting in the middle" dynamic
-- Slightly faster, more energetic feel
-
-**Color Enhancement:**
-- Same light theme base
-- Add a subtle warm gray (#F8F8F6) background tint
-- Slightly softer black for text (charcoal tone)
+**Animation Enhancements:**
+- Same staggered fade-in timing as Version A
+- Add a subtle glow/pulse effect on the logo
+- Email link with smooth color transition on hover
 
 ---
 
 ### Technical Implementation
 
-1. **Create a new page component** (`src/pages/IndexV2.tsx`) with the alternative design
+1. **Create new page component** (`src/pages/IndexV3.tsx`)
+   - Dark background with white/gray typography
+   - Same layout structure as Version A
+   - Refined hover states for dark theme
 
-2. **Add new animations** to Tailwind config:
-   - `slide-in-left`: Elements entering from the left
-   - `slide-in-right`: Elements entering from the right  
-   - `blur-in`: Blur-to-focus reveal effect
+2. **Add new animation** to Tailwind config:
+   - `glow-pulse`: Subtle pulsing glow effect for premium feel
 
-3. **Add a version toggle** in the current page so you can switch between Version A and Version B to compare them side-by-side
+3. **Update version toggle** to include Version C option
+   - Modify `VersionToggle.tsx` to support three versions
 
-4. **Layout structure:**
-   - Desktop: Two-column grid layout
-   - Mobile: Stacked layout (logo top, content below) with left-aligned text
+4. **Handle logo visibility:**
+   - If current logo works on dark background, use as-is
+   - If not, apply CSS filter to invert/brighten it
 
 ---
 
 ### What You'll Get
 
-After implementation, you'll see a toggle button in the corner of the page that lets you switch between:
-- **Version A**: The current centered, minimal design
-- **Version B**: The new asymmetric, editorial design
+The toggle will now show three options:
+- **Version A**: Light, centered, minimal
+- **Version B**: Light, asymmetric, editorial  
+- **Version C**: Dark, centered, premium
 
-This way you can compare both in real-time and choose your favorite.
+You can compare all three and pick your favorite.
 
