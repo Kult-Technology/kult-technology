@@ -1,5 +1,6 @@
 import kultLogo from "@/assets/kult-logo.png";
-import { Mail } from "lucide-react";
+import { Mail, Droplets, BarChart3 } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Index = () => {
   return (
@@ -31,6 +32,34 @@ const Index = () => {
           Tworzymy innowacyjne rozwiązania, które przesuwają granice możliwości,
           przekształcając pomysły w rzeczywistość.
         </p>
+
+        {/* Apps Section */}
+        <div
+          className="animate-fade-in-up mt-16 flex items-center gap-8 md:gap-12 opacity-0"
+          style={{ animationDelay: "500ms" }}
+        >
+          {/* DropFlow App */}
+          <div className="flex flex-col items-center gap-2">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg">
+              <Droplets className="w-8 h-8 md:w-10 md:h-10 text-white" />
+            </div>
+            <span className="text-sm text-foreground font-medium">DropFlow</span>
+          </div>
+
+          {/* Estats App */}
+          <div className="flex flex-col items-center gap-2">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center shadow-lg">
+              <BarChart3 className="w-8 h-8 md:w-10 md:h-10 text-white" />
+            </div>
+            <span className="text-sm text-foreground font-medium">Estats</span>
+          </div>
+
+          {/* Loading App */}
+          <div className="flex flex-col items-center gap-2">
+            <Skeleton className="w-16 h-16 md:w-20 md:h-20 rounded-2xl" />
+            <Skeleton className="w-12 h-4 rounded" />
+          </div>
+        </div>
 
         {/* Contact Section */}
         <a
