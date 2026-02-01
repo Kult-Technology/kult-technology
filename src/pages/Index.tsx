@@ -1,5 +1,5 @@
 import kultLogo from "@/assets/kult-logo.png";
-import { Mail, Droplets, BarChart3 } from "lucide-react";
+import { Mail, Package, Building2 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Index = () => {
@@ -40,16 +40,16 @@ const Index = () => {
         >
           {/* DropFlow App */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg">
-              <Droplets className="w-8 h-8 md:w-10 md:h-10 text-white" />
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center shadow-lg">
+              <Package className="w-8 h-8 md:w-10 md:h-10 text-white" />
             </div>
             <span className="text-sm text-foreground font-medium">DropFlow</span>
           </div>
 
           {/* Estats App */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center shadow-lg">
-              <BarChart3 className="w-8 h-8 md:w-10 md:h-10 text-white" />
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-400 flex items-center justify-center shadow-lg">
+              <Building2 className="w-8 h-8 md:w-10 md:h-10 text-white" />
             </div>
             <span className="text-sm text-foreground font-medium">Estats</span>
           </div>
