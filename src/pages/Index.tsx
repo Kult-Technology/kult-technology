@@ -40,7 +40,7 @@ const Index = () => {
         >
           {/* DropFlow App */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center shadow-lg">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#055ed1] to-[#3b8bff] flex items-center justify-center shadow-lg">
               <Package className="w-8 h-8 md:w-10 md:h-10 text-white" />
             </div>
             <span className="text-sm text-foreground font-medium">DropFlow</span>
@@ -48,7 +48,7 @@ const Index = () => {
 
           {/* Estats App */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-400 flex items-center justify-center shadow-lg">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#4ad7c7] to-[#2fb8a7] flex items-center justify-center shadow-lg">
               <Building2 className="w-8 h-8 md:w-10 md:h-10 text-white" />
             </div>
             <span className="text-sm text-foreground font-medium">Estats</span>
