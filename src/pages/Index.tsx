@@ -39,16 +39,16 @@ const Index = () => {
           style={{ animationDelay: "500ms" }}
         >
           {/* DropFlow App */}
-          <div className="flex flex-col items-center gap-2">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#055ed1] to-[#3b8bff] flex items-center justify-center shadow-lg">
+          <div className="flex flex-col items-center gap-2 group cursor-pointer">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#055ed1] to-[#3b8bff] flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-[#055ed1]/30">
               <Package className="w-8 h-8 md:w-10 md:h-10 text-white" />
             </div>
             <span className="text-sm text-foreground font-medium">DropFlow</span>
           </div>
 
           {/* Estats App */}
-          <div className="flex flex-col items-center gap-2">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#4ad7c7] to-[#2fb8a7] flex items-center justify-center shadow-lg">
+          <div className="flex flex-col items-center gap-2 group cursor-pointer">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#4ad7c7] to-[#2fb8a7] flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-[#4ad7c7]/30">
               <Building2 className="w-8 h-8 md:w-10 md:h-10 text-white" />
             </div>
             <span className="text-sm text-foreground font-medium">Estats</span>
