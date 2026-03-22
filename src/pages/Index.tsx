@@ -228,7 +228,9 @@ const Index = () => {
             ))}
           </motion.div>
         </div>
-      </section>
+       </section>
+
+      <SectionDivider direction="to-light" />
 
       {/* ========== APPS SECTION — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
