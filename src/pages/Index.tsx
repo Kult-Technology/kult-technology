@@ -445,6 +445,8 @@ const Index = () => {
         </div>
       </section>
 
+      <SectionDivider direction="to-dark" />
+
       {/* ========== CTA — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
         <FloatingOrb className="w-80 h-80 bg-[#055ed1] -top-20 left-1/3" delay={0} />
