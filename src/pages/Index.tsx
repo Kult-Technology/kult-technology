@@ -1,4 +1,4 @@
-import KultLogo from "@/components/KultLogo";
+import kultLogo from "@/assets/kult-logo.svg";
 import ParticleField from "@/components/ParticleField";
 import { Mail, Package, Building2, ArrowDown, Cpu, Cloud, Sparkles, Brain, Smartphone, Globe, ChevronRight, Rocket, Users, Code2, Target } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -118,9 +118,11 @@ const Index = () => {
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
         >
-          <KultLogo
-            className="w-auto text-foreground mb-10"
-            style={{ height: "clamp(5rem, 12vw, 10rem)" }}
+          <img
+            src={kultLogo}
+            alt="Kult Technology"
+            className="mb-10"
+            style={{ height: "clamp(2.5rem, 6vw, 5rem)", width: "auto" }}
           />
         </motion.div>
 
@@ -406,7 +408,7 @@ const Index = () => {
             >
               Napędzane przez{" "}
               <span className="gradient-text font-normal">najlepsze</span>{" "}
-              technologie
+              <span className="gradient-text font-normal">technologie</span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
