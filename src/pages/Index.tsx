@@ -375,6 +375,8 @@ const Index = () => {
         </div>
       </section>
 
+      <SectionDivider direction="to-light" />
+
       {/* ========== TECH STACK — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
         <FloatingOrb className="w-72 h-72 bg-purple-500 top-10 left-10" delay={1.5} />
