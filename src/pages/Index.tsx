@@ -498,6 +498,7 @@ const Index = () => {
       {/* ========== CONTACT — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
         <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] -top-20 right-1/3" delay={0.5} />
+        <ParticleField count={8} color="hsl(174, 60%, 56%)" />
 
         <motion.div
           className="max-w-2xl mx-auto text-center relative z-10"
