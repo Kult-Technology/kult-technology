@@ -408,7 +408,7 @@ const Index = () => {
             >
               Napędzane przez{" "}
               <span className="gradient-text font-normal">najlepsze</span>{" "}
-              technologie
+              <span className="gradient-text font-normal">technologie</span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
