@@ -1,5 +1,6 @@
 import KultLogo from "@/components/KultLogo";
 import SectionDivider from "@/components/SectionDivider";
+import ParticleField from "@/components/ParticleField";
 import { Mail, Package, Building2, ArrowDown, Cpu, Cloud, Sparkles, Brain, Smartphone, Globe, ChevronRight, Rocket, Users, Code2, Target } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -58,13 +59,6 @@ const FloatingOrb = ({ className, delay = 0 }: { className?: string; delay?: num
   />
 );
 
-/** Small continuously-animated particles for depth */
-const Particle = ({ className, size = 4 }: { className?: string; size?: number }) => (
-  <div
-    className={`absolute rounded-full ${className}`}
-    style={{ width: size, height: size }}
-  />
-);
 
 const techStack = [
   { icon: Brain, label: "AI / ML", color: "from-purple-500 to-violet-600", desc: "Sztuczna inteligencja i uczenie maszynowe" },
@@ -118,13 +112,7 @@ const Index = () => {
         <FloatingOrb className="w-72 h-72 bg-[#055ed1] -top-20 -left-20" delay={0} />
         <FloatingOrb className="w-96 h-96 bg-[#4ad7c7] -bottom-32 -right-20" delay={2} />
         <FloatingOrb className="w-48 h-48 bg-purple-400 top-1/3 right-1/4" delay={4} />
-
-        {/* Continuous particles */}
-        <Particle className="bg-[hsl(var(--dark-accent-blue))] pulse-glow top-[20%] left-[15%]" size={6} />
-        <Particle className="bg-[hsl(var(--dark-accent-cyan))] particle-drift-1 top-[60%] right-[20%]" size={5} />
-        <Particle className="bg-[hsl(var(--dark-accent-blue))] particle-drift-2 bottom-[30%] left-[40%]" size={4} />
-        <Particle className="bg-purple-400 pulse-glow top-[40%] right-[10%]" size={3} />
-        <Particle className="bg-[hsl(var(--dark-accent-cyan))] particle-drift-1 top-[10%] right-[40%]" size={5} />
+        <ParticleField count={15} color="hsl(217, 91%, 60%)" />
 
         <motion.div
           initial={{ opacity: 0, scale: 0.7, filter: "blur(20px)" }}
@@ -182,6 +170,7 @@ const Index = () => {
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
         <FloatingOrb className="w-64 h-64 bg-[#055ed1] top-20 -right-20" delay={1} />
         <FloatingOrb className="w-48 h-48 bg-[#4ad7c7] bottom-20 -left-10" delay={3} />
+        <ParticleField count={10} color="hsl(174, 60%, 56%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
@@ -251,6 +240,7 @@ const Index = () => {
       <section className="relative py-32 px-6 bg-background overflow-hidden">
         <FloatingOrb className="w-80 h-80 bg-[#055ed1] -top-40 left-1/4" delay={0} />
         <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] bottom-0 right-1/4" delay={2.5} />
+        <ParticleField count={10} color="hsl(217, 91%, 60%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
@@ -333,6 +323,7 @@ const Index = () => {
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
         <FloatingOrb className="w-56 h-56 bg-[#4ad7c7] top-10 -left-10" delay={1} />
         <FloatingOrb className="w-72 h-72 bg-purple-500 bottom-10 -right-20" delay={3} />
+        <ParticleField count={8} color="hsl(174, 60%, 56%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
@@ -396,6 +387,7 @@ const Index = () => {
       <section className="relative py-32 px-6 bg-background overflow-hidden">
         <FloatingOrb className="w-72 h-72 bg-purple-500 top-10 left-10" delay={1.5} />
         <FloatingOrb className="w-56 h-56 bg-[#055ed1] bottom-20 right-10" delay={3.5} />
+        <ParticleField count={10} color="hsl(260, 60%, 60%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
@@ -466,6 +458,7 @@ const Index = () => {
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
         <FloatingOrb className="w-80 h-80 bg-[#055ed1] -top-20 left-1/3" delay={0} />
         <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] bottom-0 right-1/4" delay={2} />
+        <ParticleField count={8} color="hsl(217, 91%, 60%)" />
 
         <motion.div
           className="max-w-3xl mx-auto text-center relative z-10"
@@ -505,6 +498,7 @@ const Index = () => {
       {/* ========== CONTACT — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
         <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] -top-20 right-1/3" delay={0.5} />
+        <ParticleField count={8} color="hsl(174, 60%, 56%)" />
 
         <motion.div
           className="max-w-2xl mx-auto text-center relative z-10"
