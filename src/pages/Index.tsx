@@ -65,7 +65,6 @@ const Particle = ({ className, size = 4 }: { className?: string; size?: number }
     style={{ width: size, height: size }}
   />
 );
-);
 
 const techStack = [
   { icon: Brain, label: "AI / ML", color: "from-purple-500 to-violet-600", desc: "Sztuczna inteligencja i uczenie maszynowe" },
