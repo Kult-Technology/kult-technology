@@ -2,7 +2,7 @@ import { CSSProperties } from "react";
 
 const KultLogo = ({ className, style }: { className?: string; style?: CSSProperties }) => (
   <svg
-    viewBox="0 0 520 60"
+    viewBox="0 0 380 50"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
@@ -12,9 +12,9 @@ const KultLogo = ({ className, style }: { className?: string; style?: CSSPropert
     {/* "kult" — bold weight */}
     <text
       x="0"
-      y="46"
+      y="40"
       fontFamily="system-ui, -apple-system, 'Segoe UI', sans-serif"
-      fontSize="52"
+      fontSize="48"
       fontWeight="800"
       letterSpacing="-1"
       fill="currentColor"
@@ -22,12 +22,12 @@ const KultLogo = ({ className, style }: { className?: string; style?: CSSPropert
       kult
     </text>
 
-    {/* "technology" — light weight */}
+    {/* "technology" — light weight, positioned right after "kult" */}
     <text
-      x="156"
-      y="46"
+      x="110"
+      y="40"
       fontFamily="system-ui, -apple-system, 'Segoe UI', sans-serif"
-      fontSize="52"
+      fontSize="48"
       fontWeight="300"
       letterSpacing="-1"
       fill="currentColor"

@@ -1,5 +1,4 @@
 import KultLogo from "@/components/KultLogo";
-import SectionDivider from "@/components/SectionDivider";
 import ParticleField from "@/components/ParticleField";
 import { Mail, Package, Building2, ArrowDown, Cpu, Cloud, Sparkles, Brain, Smartphone, Globe, ChevronRight, Rocket, Users, Code2, Target } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -164,7 +163,6 @@ const Index = () => {
         </motion.div>
       </motion.section>
 
-      <SectionDivider direction="to-dark" />
 
       {/* ========== ABOUT / MISSION — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
@@ -234,7 +232,6 @@ const Index = () => {
         </div>
        </section>
 
-      <SectionDivider direction="to-light" />
 
       {/* ========== APPS SECTION — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
@@ -317,7 +314,6 @@ const Index = () => {
         </div>
       </section>
 
-      <SectionDivider direction="to-dark" />
 
       {/* ========== PROCESS — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
@@ -381,7 +377,6 @@ const Index = () => {
         </div>
       </section>
 
-      <SectionDivider direction="to-light" />
 
       {/* ========== TECH STACK — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
@@ -452,7 +447,6 @@ const Index = () => {
         </div>
       </section>
 
-      <SectionDivider direction="to-dark" />
 
       {/* ========== CTA — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
@@ -493,7 +487,6 @@ const Index = () => {
         </motion.div>
       </section>
 
-      <SectionDivider direction="to-light" />
 
       {/* ========== CONTACT — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
@@ -547,7 +540,6 @@ const Index = () => {
         </motion.div>
       </section>
 
-      <SectionDivider direction="to-dark" />
 
       {/* Footer */}
       <footer className="py-8 text-center bg-[hsl(var(--dark-bg))] border-t border-[hsl(var(--dark-card-border))]">
