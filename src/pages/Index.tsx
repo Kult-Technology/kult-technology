@@ -45,17 +45,26 @@ const FloatingOrb = ({ className, delay = 0 }: { className?: string; delay?: num
   <motion.div
     className={`absolute rounded-full blur-3xl opacity-20 ${className}`}
     animate={{
-      y: [0, -30, 0],
-      x: [0, 15, 0],
-      scale: [1, 1.1, 1],
+      y: [0, -30, 0, 20, 0],
+      x: [0, 15, -10, 20, 0],
+      scale: [1, 1.15, 0.95, 1.1, 1],
     }}
     transition={{
-      duration: 8,
+      duration: 10,
       repeat: Infinity,
       delay,
       ease: "easeInOut",
     }}
   />
+);
+
+/** Small continuously-animated particles for depth */
+const Particle = ({ className, size = 4 }: { className?: string; size?: number }) => (
+  <div
+    className={`absolute rounded-full ${className}`}
+    style={{ width: size, height: size }}
+  />
+);
 );
 
 const techStack = [
