@@ -119,6 +119,13 @@ const Index = () => {
         <FloatingOrb className="w-96 h-96 bg-[#4ad7c7] -bottom-32 -right-20" delay={2} />
         <FloatingOrb className="w-48 h-48 bg-purple-400 top-1/3 right-1/4" delay={4} />
 
+        {/* Continuous particles */}
+        <Particle className="bg-[hsl(var(--dark-accent-blue))] pulse-glow top-[20%] left-[15%]" size={6} />
+        <Particle className="bg-[hsl(var(--dark-accent-cyan))] particle-drift-1 top-[60%] right-[20%]" size={5} />
+        <Particle className="bg-[hsl(var(--dark-accent-blue))] particle-drift-2 bottom-[30%] left-[40%]" size={4} />
+        <Particle className="bg-purple-400 pulse-glow top-[40%] right-[10%]" size={3} />
+        <Particle className="bg-[hsl(var(--dark-accent-cyan))] particle-drift-1 top-[10%] right-[40%]" size={5} />
+
         <motion.div
           initial={{ opacity: 0, scale: 0.7, filter: "blur(20px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
