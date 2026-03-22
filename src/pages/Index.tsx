@@ -323,6 +323,7 @@ const Index = () => {
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
         <FloatingOrb className="w-56 h-56 bg-[#4ad7c7] top-10 -left-10" delay={1} />
         <FloatingOrb className="w-72 h-72 bg-purple-500 bottom-10 -right-20" delay={3} />
+        <ParticleField count={8} color="hsl(174, 60%, 56%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
