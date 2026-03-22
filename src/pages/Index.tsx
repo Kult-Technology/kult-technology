@@ -1,4 +1,4 @@
-import KultLogo from "@/components/KultLogo";
+import kultLogo from "@/assets/kult-logo.svg";
 import ParticleField from "@/components/ParticleField";
 import { Mail, Package, Building2, ArrowDown, Cpu, Cloud, Sparkles, Brain, Smartphone, Globe, ChevronRight, Rocket, Users, Code2, Target } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
