@@ -1,4 +1,6 @@
-const KultLogo = ({ className }: { className?: string }) => (
+import { CSSProperties } from "react";
+
+const KultLogo = ({ className, style }: { className?: string; style?: CSSProperties }) => (
   <svg
     viewBox="0 0 480 120"
     fill="none"
