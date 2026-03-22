@@ -485,6 +485,8 @@ const Index = () => {
         </motion.div>
       </section>
 
+      <SectionDivider direction="to-light" />
+
       {/* ========== CONTACT — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
         <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] -top-20 right-1/3" delay={0.5} />
