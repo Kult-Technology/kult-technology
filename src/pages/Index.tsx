@@ -1,5 +1,5 @@
 import kultLogo from "@/assets/kult-logo.png";
-import { Mail, Package, Building2, ArrowDown, Cpu, Cloud, Sparkles, Brain, Shield, Zap, ChevronRight } from "lucide-react";
+import { Mail, Package, Building2, ArrowDown, Cpu, Cloud, Sparkles, Brain, Smartphone, Globe, ChevronRight, Rocket, Users, Code2, Target } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -42,9 +42,9 @@ const FloatingOrb = ({ className, delay = 0 }: { className?: string; delay?: num
 const techStack = [
   { icon: Brain, label: "AI / ML", color: "from-purple-500 to-violet-600" },
   { icon: Cloud, label: "Cloud", color: "from-sky-400 to-blue-500" },
-  { icon: Cpu, label: "IoT", color: "from-emerald-400 to-teal-500" },
-  { icon: Shield, label: "Security", color: "from-amber-400 to-orange-500" },
-  { icon: Zap, label: "Performance", color: "from-rose-400 to-pink-500" },
+  { icon: Smartphone, label: "Aplikacje mobilne", color: "from-emerald-400 to-teal-500" },
+  { icon: Globe, label: "Aplikacje webowe", color: "from-amber-400 to-orange-500" },
+  { icon: Cpu, label: "Performance", color: "from-rose-400 to-pink-500" },
   { icon: Sparkles, label: "Innovation", color: "from-indigo-400 to-blue-600" },
 ];
 
@@ -67,6 +67,13 @@ const apps = [
   },
 ];
 
+const processSteps = [
+  { icon: Target, title: "Analiza", description: "Poznajemy potrzeby i definiujemy cel projektu." },
+  { icon: Code2, title: "Rozwój", description: "Tworzymy rozwiązanie z użyciem najnowszych technologii." },
+  { icon: Rocket, title: "Wdrożenie", description: "Dostarczamy gotowy produkt i zapewniamy wsparcie." },
+  { icon: Users, title: "Współpraca", description: "Działamy jako Twój partner technologiczny na dłuższą metę." },
+];
+
 const Index = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
@@ -81,7 +88,6 @@ const Index = () => {
         style={{ opacity: heroOpacity, scale: heroScale }}
         className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
       >
-        {/* Decorative orbs */}
         <FloatingOrb className="w-72 h-72 bg-[#055ed1] -top-20 -left-20" delay={0} />
         <FloatingOrb className="w-96 h-96 bg-[#4ad7c7] -bottom-32 -right-20" delay={2} />
         <FloatingOrb className="w-48 h-48 bg-purple-400 top-1/3 right-1/4" delay={4} />
@@ -91,11 +97,17 @@ const Index = () => {
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
         >
-          <img src={kultLogo} alt="Kult Technology" className="h-28 md:h-36 lg:h-44 w-auto mb-8" />
+          <img
+            src={kultLogo}
+            alt="Kult Technology – firma technologiczna"
+            className="w-auto mb-8"
+            style={{ height: "clamp(5rem, 10vw, 11rem)" }}
+          />
         </motion.div>
 
         <motion.h1
-          className="text-3xl md:text-5xl lg:text-6xl font-extralight text-foreground text-center tracking-tight max-w-3xl leading-tight"
+          className="text-foreground text-center tracking-tight max-w-3xl leading-tight font-extralight"
+          style={{ fontSize: "clamp(1.75rem, 4vw, 3.75rem)" }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
@@ -106,7 +118,8 @@ const Index = () => {
         </motion.h1>
 
         <motion.p
-          className="mt-6 max-w-lg text-center text-muted-foreground text-base md:text-lg leading-relaxed"
+          className="mt-6 max-w-lg text-center text-muted-foreground leading-relaxed"
+          style={{ fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
@@ -115,7 +128,6 @@ const Index = () => {
           przekształcając pomysły w rzeczywistość.
         </motion.p>
 
-        {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-10 flex flex-col items-center gap-2 text-muted-foreground"
           initial={{ opacity: 0 }}
@@ -154,7 +166,8 @@ const Index = () => {
             <motion.h2
               variants={fadeUp}
               custom={1}
-              className="mt-4 text-3xl md:text-5xl font-light text-[hsl(var(--dark-fg))] leading-tight"
+              className="mt-4 font-light text-[hsl(var(--dark-fg))] leading-tight"
+              style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
             >
               Budujemy technologię,{" "}
               <span className="gradient-text font-normal">która zmienia zasady gry</span>
@@ -162,15 +175,15 @@ const Index = () => {
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="mt-6 max-w-2xl mx-auto text-[hsl(var(--dark-muted))] text-base md:text-lg leading-relaxed"
+              className="mt-6 max-w-2xl mx-auto text-[hsl(var(--dark-muted))] leading-relaxed"
+              style={{ fontSize: "clamp(0.875rem, 1.3vw, 1.125rem)" }}
             >
-              Kult Technology to zespół pasjonatów technologii, którzy wierzą, że najlepsze
+              Kult Technology to zespół pasjonatów programowania, którzy wierzą, że najlepsze
               rozwiązania rodzą się na styku innowacji i użyteczności. Łączymy nowoczesne
               technologie z głębokim zrozumieniem potrzeb użytkowników.
             </motion.p>
           </motion.div>
 
-          {/* Stats */}
           <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-6"
             initial="hidden"
@@ -179,7 +192,7 @@ const Index = () => {
           >
             {[
               { value: "2+", label: "Produkty" },
-              { value: "2025", label: "Rok założenia" },
+              { value: "2026", label: "Rok założenia" },
               { value: "∞", label: "Ambicje" },
               { value: "24/7", label: "Zaangażowanie" },
             ].map((stat, i) => (
@@ -219,7 +232,8 @@ const Index = () => {
             <motion.h2
               variants={fadeUp}
               custom={1}
-              className="mt-4 text-3xl md:text-5xl font-light text-foreground"
+              className="mt-4 font-light text-foreground"
+              style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
             >
               Aplikacje, które{" "}
               <span className="gradient-text font-normal">działają</span>
@@ -242,9 +256,7 @@ const Index = () => {
                   <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110`}>
                     <app.icon className="w-7 h-7 text-white" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground">{app.name}</h3>
-                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">{app.name}</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-6">{app.description}</p>
                 <ul className="space-y-2">
@@ -258,7 +270,6 @@ const Index = () => {
               </motion.div>
             ))}
 
-            {/* Loading App */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -276,10 +287,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ========== TECH STACK — Dark ========== */}
+      {/* ========== PROCESS — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
-        <FloatingOrb className="w-72 h-72 bg-purple-500 top-10 left-10" delay={1.5} />
-        <FloatingOrb className="w-56 h-56 bg-[#055ed1] bottom-20 right-10" delay={3.5} />
+        <FloatingOrb className="w-56 h-56 bg-[#4ad7c7] top-10 -left-10" delay={1} />
+        <FloatingOrb className="w-72 h-72 bg-purple-500 bottom-10 -right-20" delay={3} />
 
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
@@ -293,12 +304,71 @@ const Index = () => {
               custom={0}
               className="text-xs tracking-[0.3em] uppercase text-[hsl(var(--dark-muted))]"
             >
+              Jak działamy
+            </motion.span>
+            <motion.h2
+              variants={fadeUp}
+              custom={1}
+              className="mt-4 font-light text-[hsl(var(--dark-fg))]"
+              style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
+            >
+              Nasz{" "}
+              <span className="gradient-text font-normal">proces</span>
+            </motion.h2>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            {processSteps.map((step, i) => (
+              <motion.div
+                key={step.title}
+                variants={scaleIn}
+                custom={i}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                className="glass rounded-2xl p-6 text-center cursor-pointer group relative"
+              >
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[hsl(var(--dark-accent-blue))] to-[hsl(var(--dark-accent-cyan))] flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110 shadow-lg">
+                  <step.icon className="w-6 h-6 text-white" />
+                </div>
+                <span className="absolute top-4 right-4 text-xs font-bold text-[hsl(var(--dark-muted))] opacity-40">
+                  0{i + 1}
+                </span>
+                <h3 className="text-base font-semibold text-[hsl(var(--dark-fg))] mb-2">{step.title}</h3>
+                <p className="text-sm text-[hsl(var(--dark-muted))] leading-relaxed">{step.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ========== TECH STACK — Light ========== */}
+      <section className="relative py-32 px-6 bg-background overflow-hidden">
+        <FloatingOrb className="w-72 h-72 bg-purple-500 top-10 left-10" delay={1.5} />
+        <FloatingOrb className="w-56 h-56 bg-[#055ed1] bottom-20 right-10" delay={3.5} />
+
+        <div className="max-w-5xl mx-auto relative z-10">
+          <motion.div
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.span
+              variants={fadeUp}
+              custom={0}
+              className="text-xs tracking-[0.3em] uppercase text-muted-foreground"
+            >
               Technologie
             </motion.span>
             <motion.h2
               variants={fadeUp}
               custom={1}
-              className="mt-4 text-3xl md:text-5xl font-light text-[hsl(var(--dark-fg))]"
+              className="mt-4 font-light text-foreground"
+              style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
             >
               Napędzane przez{" "}
               <span className="gradient-text font-normal">najlepsze</span>{" "}
@@ -318,19 +388,57 @@ const Index = () => {
                 variants={scaleIn}
                 custom={i}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                className="glass rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group"
+                className="glass-light rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group"
               >
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-lg`}>
                   <tech.icon className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-sm font-medium text-[hsl(var(--dark-fg))]">{tech.label}</span>
+                <span className="text-sm font-medium text-foreground">{tech.label}</span>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* ========== CONTACT & FOOTER — Light ========== */}
+      {/* ========== CTA — Dark ========== */}
+      <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
+        <FloatingOrb className="w-80 h-80 bg-[#055ed1] -top-20 left-1/3" delay={0} />
+        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] bottom-0 right-1/4" delay={2} />
+
+        <motion.div
+          className="max-w-3xl mx-auto text-center relative z-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <motion.span
+            variants={fadeUp}
+            custom={0}
+            className="text-xs tracking-[0.3em] uppercase text-[hsl(var(--dark-muted))]"
+          >
+            Dołącz do nas
+          </motion.span>
+          <motion.h2
+            variants={fadeUp}
+            custom={1}
+            className="mt-4 font-light text-[hsl(var(--dark-fg))]"
+            style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
+          >
+            Masz pomysł?{" "}
+            <span className="gradient-text font-normal">Zrealizujmy go razem</span>
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            custom={2}
+            className="mt-6 text-[hsl(var(--dark-muted))]"
+            style={{ fontSize: "clamp(0.875rem, 1.3vw, 1.125rem)" }}
+          >
+            Niezależnie od etapu projektu — od pomysłu po skalowanie — jesteśmy gotowi pomóc.
+          </motion.p>
+        </motion.div>
+      </section>
+
+      {/* ========== CONTACT — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
         <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] -top-20 right-1/3" delay={0.5} />
 
@@ -350,7 +458,8 @@ const Index = () => {
           <motion.h2
             variants={fadeUp}
             custom={1}
-            className="mt-4 text-3xl md:text-5xl font-light text-foreground"
+            className="mt-4 font-light text-foreground"
+            style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
           >
             Porozmawiajmy o{" "}
             <span className="gradient-text font-normal">przyszłości</span>
@@ -358,7 +467,8 @@ const Index = () => {
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="mt-6 text-muted-foreground text-base md:text-lg"
+            className="mt-6 text-muted-foreground"
+            style={{ fontSize: "clamp(0.875rem, 1.3vw, 1.125rem)" }}
           >
             Masz pomysł, który chcesz zrealizować? Napisz do nas.
           </motion.p>
@@ -366,14 +476,14 @@ const Index = () => {
           <motion.a
             variants={fadeUp}
             custom={3}
-            href="mailto:hello@kulttechnology.com"
+            href="mailto:kontakt@kulttechnology.pl"
             className="mt-10 inline-flex items-center gap-3 px-8 py-4 rounded-full glass-light text-foreground hover:shadow-xl transition-all duration-300 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
             <Mail className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
             <span className="text-sm md:text-base tracking-wide font-medium">
-              hello@kulttechnology.com
+              kontakt@kulttechnology.pl
             </span>
           </motion.a>
         </motion.div>
@@ -382,7 +492,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 text-center bg-[hsl(var(--dark-bg))] border-t border-[hsl(var(--dark-card-border))]">
         <p className="text-xs text-[hsl(var(--dark-muted))] tracking-wide">
-          © {new Date().getFullYear()} Kult Technology. Wszelkie prawa zastrzeżone.
+          © {new Date().getFullYear()} Kult Technology
         </p>
       </footer>
     </div>
