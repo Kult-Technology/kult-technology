@@ -161,6 +161,8 @@ const Index = () => {
         </motion.div>
       </motion.section>
 
+      <SectionDivider direction="to-dark" />
+
       {/* ========== ABOUT / MISSION — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
         <FloatingOrb className="w-64 h-64 bg-[#055ed1] top-20 -right-20" delay={1} />
