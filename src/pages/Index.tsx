@@ -538,6 +538,8 @@ const Index = () => {
         </motion.div>
       </section>
 
+      <SectionDivider direction="to-dark" />
+
       {/* Footer */}
       <footer className="py-8 text-center bg-[hsl(var(--dark-bg))] border-t border-[hsl(var(--dark-card-border))]">
         <p className="text-xs text-[hsl(var(--dark-muted))] tracking-wide">
