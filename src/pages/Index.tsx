@@ -312,6 +312,8 @@ const Index = () => {
         </div>
       </section>
 
+      <SectionDivider direction="to-dark" />
+
       {/* ========== PROCESS — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
         <FloatingOrb className="w-56 h-56 bg-[#4ad7c7] top-10 -left-10" delay={1} />
