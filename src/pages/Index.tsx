@@ -59,13 +59,6 @@ const FloatingOrb = ({ className, delay = 0 }: { className?: string; delay?: num
   />
 );
 
-/** Small continuously-animated particles for depth */
-const Particle = ({ className, size = 4 }: { className?: string; size?: number }) => (
-  <div
-    className={`absolute rounded-full ${className}`}
-    style={{ width: size, height: size }}
-  />
-);
 
 const techStack = [
   { icon: Brain, label: "AI / ML", color: "from-purple-500 to-violet-600", desc: "Sztuczna inteligencja i uczenie maszynowe" },
