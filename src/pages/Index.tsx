@@ -22,6 +22,24 @@ const scaleIn = {
   }),
 };
 
+const slideInLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.15, duration: 0.7, ease: [0.25, 0.4, 0.25, 1] as const },
+  }),
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.15, duration: 0.7, ease: [0.25, 0.4, 0.25, 1] as const },
+  }),
+};
+
 const FloatingOrb = ({ className, delay = 0 }: { className?: string; delay?: number }) => (
   <motion.div
     className={`absolute rounded-full blur-3xl opacity-20 ${className}`}
@@ -40,12 +58,12 @@ const FloatingOrb = ({ className, delay = 0 }: { className?: string; delay?: num
 );
 
 const techStack = [
-  { icon: Brain, label: "AI / ML", color: "from-purple-500 to-violet-600" },
-  { icon: Cloud, label: "Cloud", color: "from-sky-400 to-blue-500" },
-  { icon: Smartphone, label: "Aplikacje mobilne", color: "from-emerald-400 to-teal-500" },
-  { icon: Globe, label: "Aplikacje webowe", color: "from-amber-400 to-orange-500" },
-  { icon: Cpu, label: "Performance", color: "from-rose-400 to-pink-500" },
-  { icon: Sparkles, label: "Innovation", color: "from-indigo-400 to-blue-600" },
+  { icon: Brain, label: "AI / ML", color: "from-purple-500 to-violet-600", desc: "Sztuczna inteligencja i uczenie maszynowe" },
+  { icon: Cloud, label: "Cloud", color: "from-sky-400 to-blue-500", desc: "Infrastruktura chmurowa i DevOps" },
+  { icon: Smartphone, label: "Aplikacje mobilne", color: "from-emerald-400 to-teal-500", desc: "Natywne i cross-platform aplikacje" },
+  { icon: Globe, label: "Aplikacje webowe", color: "from-amber-400 to-orange-500", desc: "Nowoczesne aplikacje internetowe" },
+  { icon: Cpu, label: "Optymalizacja", color: "from-rose-400 to-pink-500", desc: "Wydajność i skalowanie systemów" },
+  { icon: Sparkles, label: "Innowacja", color: "from-indigo-400 to-blue-600", desc: "Nowe technologie i podejścia" },
 ];
 
 const apps = [
@@ -59,17 +77,17 @@ const apps = [
   },
   {
     name: "Estats",
-    description: "Inteligentna platforma do zarządzania nieruchomościami. Śledź portfolio, analizuj rynek i zarządzaj klientami.",
+    description: "Inteligentna platforma do monitorowania rynku nieruchomości. Zbiera ogłoszenia z wielu źródeł i powiadamia o nowych ofertach dopasowanych do Twoich filtrów.",
     icon: Building2,
     gradient: "from-[#4ad7c7] to-[#2fb8a7]",
     shadowColor: "shadow-[#4ad7c7]/20",
-    features: ["Zarządzanie portfolio", "Analiza rynku", "CRM klientów"],
+    features: ["Agregacja ogłoszeń z wielu źródeł", "Powiadomienia o nowych ofertach", "Zaawansowane filtry wyszukiwania"],
   },
 ];
 
 const processSteps = [
   { icon: Target, title: "Analiza", description: "Poznajemy potrzeby i definiujemy cel projektu." },
-  { icon: Code2, title: "Rozwój", description: "Tworzymy rozwiązanie z użyciem najnowszych technologii." },
+  { icon: Code2, title: "Rozwój", description: "Tworzymy rozwiązanie z użyciem dopasowanych technologii." },
   { icon: Rocket, title: "Wdrożenie", description: "Dostarczamy gotowy produkt i zapewniamy wsparcie." },
   { icon: Users, title: "Współpraca", description: "Działamy jako Twój partner technologiczny na dłuższą metę." },
 ];
@@ -93,21 +111,21 @@ const Index = () => {
         <FloatingOrb className="w-48 h-48 bg-purple-400 top-1/3 right-1/4" delay={4} />
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+          initial={{ opacity: 0, scale: 0.7, filter: "blur(20px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
+          transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
         >
           <img
             src={kultLogo}
             alt="Kult Technology – firma technologiczna"
-            className="w-auto mb-8"
-            style={{ height: "clamp(5rem, 10vw, 11rem)" }}
+            className="w-auto mb-10"
+            style={{ height: "clamp(7rem, 14vw, 14rem)" }}
           />
         </motion.div>
 
         <motion.h1
-          className="text-foreground text-center tracking-tight max-w-3xl leading-tight font-extralight"
-          style={{ fontSize: "clamp(1.75rem, 4vw, 3.75rem)" }}
+          className="text-foreground text-center tracking-tight max-w-4xl leading-tight font-extralight"
+          style={{ fontSize: "clamp(2rem, 5vw, 4.5rem)" }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
@@ -118,14 +136,14 @@ const Index = () => {
         </motion.h1>
 
         <motion.p
-          className="mt-6 max-w-lg text-center text-muted-foreground leading-relaxed"
-          style={{ fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)" }}
+          className="mt-6 max-w-xl text-center text-muted-foreground leading-relaxed"
+          style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.25rem)" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          Tworzymy innowacyjne rozwiązania, które przesuwają granice możliwości,
-          przekształcając pomysły w rzeczywistość.
+          Projektujemy i budujemy oprogramowanie, które rozwiązuje realne problemy
+          — od pomysłu, przez architekturę, aż po gotowy produkt.
         </motion.p>
 
         <motion.div
@@ -169,8 +187,8 @@ const Index = () => {
               className="mt-4 font-light text-[hsl(var(--dark-fg))] leading-tight"
               style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
             >
-              Budujemy technologię,{" "}
-              <span className="gradient-text font-normal">która zmienia zasady gry</span>
+              Budujemy narzędzia,{" "}
+              <span className="gradient-text font-normal">które zmieniają zasady gry</span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -200,6 +218,7 @@ const Index = () => {
                 key={stat.label}
                 variants={scaleIn}
                 custom={i}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 className="glass rounded-2xl p-6 text-center"
               >
                 <div className="text-3xl md:text-4xl font-bold gradient-text">{stat.value}</div>
@@ -235,8 +254,8 @@ const Index = () => {
               className="mt-4 font-light text-foreground"
               style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
             >
-              Aplikacje, które{" "}
-              <span className="gradient-text font-normal">działają</span>
+              Rozwiązania, które{" "}
+              <span className="gradient-text font-normal">napędzają biznes</span>
             </motion.h2>
           </motion.div>
 
@@ -247,15 +266,18 @@ const Index = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                variants={fadeUp}
-                custom={i}
+                variants={i === 0 ? slideInLeft : slideInRight}
+                custom={0}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className={`glass-light rounded-3xl p-8 cursor-pointer group transition-shadow duration-300 hover:shadow-2xl hover:${app.shadowColor}`}
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110`}>
+                  <motion.div
+                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center shadow-lg`}
+                    whileHover={{ scale: 1.15, rotate: 5, transition: { duration: 0.3 } }}
+                  >
                     <app.icon className="w-7 h-7 text-white" />
-                  </div>
+                  </motion.div>
                   <h3 className="text-xl font-semibold text-foreground">{app.name}</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-6">{app.description}</p>
@@ -312,8 +334,8 @@ const Index = () => {
               className="mt-4 font-light text-[hsl(var(--dark-fg))]"
               style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
             >
-              Nasz{" "}
-              <span className="gradient-text font-normal">proces</span>
+              Nasz sprawdzony{" "}
+              <span className="gradient-text font-normal">proces realizacji</span>
             </motion.h2>
           </motion.div>
 
@@ -328,12 +350,15 @@ const Index = () => {
                 key={step.title}
                 variants={scaleIn}
                 custom={i}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.2 } }}
                 className="glass rounded-2xl p-6 text-center cursor-pointer group relative"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[hsl(var(--dark-accent-blue))] to-[hsl(var(--dark-accent-cyan))] flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110 shadow-lg">
+                <motion.div
+                  className="w-12 h-12 rounded-xl bg-gradient-to-br from-[hsl(var(--dark-accent-blue))] to-[hsl(var(--dark-accent-cyan))] flex items-center justify-center mx-auto mb-4 shadow-lg"
+                  whileHover={{ rotate: 10, scale: 1.1, transition: { duration: 0.3 } }}
+                >
                   <step.icon className="w-6 h-6 text-white" />
-                </div>
+                </motion.div>
                 <span className="absolute top-4 right-4 text-xs font-bold text-[hsl(var(--dark-muted))] opacity-40">
                   0{i + 1}
                 </span>
@@ -374,6 +399,15 @@ const Index = () => {
               <span className="gradient-text font-normal">najlepsze</span>{" "}
               technologie
             </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              custom={2}
+              className="mt-6 max-w-2xl mx-auto text-muted-foreground leading-relaxed"
+              style={{ fontSize: "clamp(0.875rem, 1.3vw, 1.125rem)" }}
+            >
+              Dobieramy narzędzia dopasowane do potrzeb projektu — od sprawdzonych frameworków
+              po rozwiązania oparte na sztucznej inteligencji.
+            </motion.p>
           </motion.div>
 
           <motion.div
@@ -387,13 +421,17 @@ const Index = () => {
                 key={tech.label}
                 variants={scaleIn}
                 custom={i}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                className="glass-light rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group"
+                whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.2 } }}
+                className="glass-light rounded-2xl p-6 flex flex-col items-center gap-3 cursor-pointer group"
               >
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-lg`}>
+                <motion.div
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center shadow-lg`}
+                  whileHover={{ rotate: 8, scale: 1.15, transition: { duration: 0.3 } }}
+                >
                   <tech.icon className="w-6 h-6 text-white" />
-                </div>
+                </motion.div>
                 <span className="text-sm font-medium text-foreground">{tech.label}</span>
+                <span className="text-xs text-muted-foreground text-center leading-relaxed">{tech.desc}</span>
               </motion.div>
             ))}
           </motion.div>
