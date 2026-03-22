@@ -116,11 +116,9 @@ const Index = () => {
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
         >
-          <img
-            src={kultLogo}
-            alt="Kult Technology – firma technologiczna"
-            className="w-auto mb-10"
-            style={{ height: "clamp(7rem, 14vw, 14rem)" }}
+          <KultLogo
+            className="w-auto text-foreground mb-10"
+            style={{ height: "clamp(5rem, 12vw, 10rem)" }}
           />
         </motion.div>
 
