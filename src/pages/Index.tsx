@@ -121,8 +121,8 @@ const Index = () => {
           <img
             src={kultLogo}
             alt="Kult Technology"
-            className="mb-10"
-            style={{ height: "clamp(2.5rem, 6vw, 5rem)", width: "auto" }}
+            className="mb-10 invert"
+            style={{ height: "clamp(3.5rem, 10vw, 8rem)", width: "auto" }}
           />
         </motion.div>
 
