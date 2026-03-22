@@ -1,4 +1,5 @@
-import kultLogo from "@/assets/kult-logo.png";
+import KultLogo from "@/components/KultLogo";
+import SectionDivider from "@/components/SectionDivider";
 import { Mail, Package, Building2, ArrowDown, Cpu, Cloud, Sparkles, Brain, Smartphone, Globe, ChevronRight, Rocket, Users, Code2, Target } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -44,16 +45,24 @@ const FloatingOrb = ({ className, delay = 0 }: { className?: string; delay?: num
   <motion.div
     className={`absolute rounded-full blur-3xl opacity-20 ${className}`}
     animate={{
-      y: [0, -30, 0],
-      x: [0, 15, 0],
-      scale: [1, 1.1, 1],
+      y: [0, -30, 0, 20, 0],
+      x: [0, 15, -10, 20, 0],
+      scale: [1, 1.15, 0.95, 1.1, 1],
     }}
     transition={{
-      duration: 8,
+      duration: 10,
       repeat: Infinity,
       delay,
       ease: "easeInOut",
     }}
+  />
+);
+
+/** Small continuously-animated particles for depth */
+const Particle = ({ className, size = 4 }: { className?: string; size?: number }) => (
+  <div
+    className={`absolute rounded-full ${className}`}
+    style={{ width: size, height: size }}
   />
 );
 
@@ -110,16 +119,21 @@ const Index = () => {
         <FloatingOrb className="w-96 h-96 bg-[#4ad7c7] -bottom-32 -right-20" delay={2} />
         <FloatingOrb className="w-48 h-48 bg-purple-400 top-1/3 right-1/4" delay={4} />
 
+        {/* Continuous particles */}
+        <Particle className="bg-[hsl(var(--dark-accent-blue))] pulse-glow top-[20%] left-[15%]" size={6} />
+        <Particle className="bg-[hsl(var(--dark-accent-cyan))] particle-drift-1 top-[60%] right-[20%]" size={5} />
+        <Particle className="bg-[hsl(var(--dark-accent-blue))] particle-drift-2 bottom-[30%] left-[40%]" size={4} />
+        <Particle className="bg-purple-400 pulse-glow top-[40%] right-[10%]" size={3} />
+        <Particle className="bg-[hsl(var(--dark-accent-cyan))] particle-drift-1 top-[10%] right-[40%]" size={5} />
+
         <motion.div
           initial={{ opacity: 0, scale: 0.7, filter: "blur(20px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
         >
-          <img
-            src={kultLogo}
-            alt="Kult Technology – firma technologiczna"
-            className="w-auto mb-10"
-            style={{ height: "clamp(7rem, 14vw, 14rem)" }}
+          <KultLogo
+            className="w-auto text-foreground mb-10"
+            style={{ height: "clamp(5rem, 12vw, 10rem)" }}
           />
         </motion.div>
 
@@ -161,6 +175,8 @@ const Index = () => {
           </motion.div>
         </motion.div>
       </motion.section>
+
+      <SectionDivider direction="to-dark" />
 
       {/* ========== ABOUT / MISSION — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
@@ -227,7 +243,9 @@ const Index = () => {
             ))}
           </motion.div>
         </div>
-      </section>
+       </section>
+
+      <SectionDivider direction="to-light" />
 
       {/* ========== APPS SECTION — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
@@ -309,6 +327,8 @@ const Index = () => {
         </div>
       </section>
 
+      <SectionDivider direction="to-dark" />
+
       {/* ========== PROCESS — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
         <FloatingOrb className="w-56 h-56 bg-[#4ad7c7] top-10 -left-10" delay={1} />
@@ -369,6 +389,8 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      <SectionDivider direction="to-light" />
 
       {/* ========== TECH STACK — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
@@ -438,6 +460,8 @@ const Index = () => {
         </div>
       </section>
 
+      <SectionDivider direction="to-dark" />
+
       {/* ========== CTA — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
         <FloatingOrb className="w-80 h-80 bg-[#055ed1] -top-20 left-1/3" delay={0} />
@@ -475,6 +499,8 @@ const Index = () => {
           </motion.p>
         </motion.div>
       </section>
+
+      <SectionDivider direction="to-light" />
 
       {/* ========== CONTACT — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
@@ -526,6 +552,8 @@ const Index = () => {
           </motion.a>
         </motion.div>
       </section>
+
+      <SectionDivider direction="to-dark" />
 
       {/* Footer */}
       <footer className="py-8 text-center bg-[hsl(var(--dark-bg))] border-t border-[hsl(var(--dark-card-border))]">
