@@ -97,9 +97,9 @@ const Index = () => {
         style={{ opacity: heroOpacity, scale: heroScale }}
         className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 overflow-hidden"
       >
-        <FloatingOrb className="w-72 h-72 bg-[#055ed1] -top-20 -left-20" />
-        <FloatingOrb className="w-96 h-96 bg-[#4ad7c7] -bottom-32 -right-20" />
-        <FloatingOrb className="w-48 h-48 bg-purple-400 top-1/3 right-1/4" />
+        <FloatingOrb className="w-72 h-72 bg-[#055ed1]/[0.07] -top-20 -left-20" />
+        <FloatingOrb className="w-96 h-96 bg-[#4ad7c7]/[0.07] -bottom-32 -right-20" />
+        <FloatingOrb className="w-48 h-48 bg-purple-400/[0.07] top-1/3 right-1/4" />
         <ParticleField count={15} color="hsl(217, 91%, 60%)" />
 
         <motion.div
@@ -157,8 +157,8 @@ const Index = () => {
 
       {/* ========== ABOUT / MISSION — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
-        <FloatingOrb className="w-64 h-64 bg-[#055ed1] top-20 -right-20" />
-        <FloatingOrb className="w-48 h-48 bg-[#4ad7c7] bottom-20 -left-10" />
+        <FloatingOrb className="w-64 h-64 bg-[#055ed1]/[0.07] top-20 -right-20" />
+        <FloatingOrb className="w-48 h-48 bg-[#4ad7c7]/[0.07] bottom-20 -left-10" />
         <ParticleField count={10} color="hsl(174, 60%, 56%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
@@ -226,8 +226,8 @@ const Index = () => {
 
       {/* ========== APPS SECTION — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
-        <FloatingOrb className="w-80 h-80 bg-[#055ed1] -top-40 left-1/4" />
-        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] bottom-0 right-1/4" />
+        <FloatingOrb className="w-80 h-80 bg-[#055ed1]/[0.07] -top-40 left-1/4" />
+        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7]/[0.07] bottom-0 right-1/4" />
         <ParticleField count={10} color="hsl(217, 91%, 60%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
@@ -308,8 +308,8 @@ const Index = () => {
 
       {/* ========== PROCESS — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
-        <FloatingOrb className="w-56 h-56 bg-[#4ad7c7] top-10 -left-10" />
-        <FloatingOrb className="w-72 h-72 bg-purple-500 bottom-10 -right-20" />
+        <FloatingOrb className="w-56 h-56 bg-[#4ad7c7]/[0.07] top-10 -left-10" />
+        <FloatingOrb className="w-72 h-72 bg-purple-500/[0.07] bottom-10 -right-20" />
         <ParticleField count={8} color="hsl(174, 60%, 56%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
@@ -371,8 +371,8 @@ const Index = () => {
 
       {/* ========== TECH STACK — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
-        <FloatingOrb className="w-72 h-72 bg-purple-500 top-10 left-10" />
-        <FloatingOrb className="w-56 h-56 bg-[#055ed1] bottom-20 right-10" />
+        <FloatingOrb className="w-72 h-72 bg-purple-500/[0.07] top-10 left-10" />
+        <FloatingOrb className="w-56 h-56 bg-[#055ed1]/[0.07] bottom-20 right-10" />
         <ParticleField count={10} color="hsl(260, 60%, 60%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
@@ -440,8 +440,8 @@ const Index = () => {
 
       {/* ========== CTA — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
-        <FloatingOrb className="w-80 h-80 bg-[#055ed1] -top-20 left-1/3" />
-        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] bottom-0 right-1/4" />
+        <FloatingOrb className="w-80 h-80 bg-[#055ed1]/[0.07] -top-20 left-1/3" />
+        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7]/[0.07] bottom-0 right-1/4" />
         <ParticleField count={8} color="hsl(217, 91%, 60%)" />
 
         <motion.div
@@ -480,7 +480,7 @@ const Index = () => {
 
       {/* ========== CONTACT — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
-        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] -top-20 right-1/3" />
+        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7]/[0.07] -top-20 right-1/3" />
         <ParticleField count={8} color="hsl(174, 60%, 56%)" />
 
         <motion.div
