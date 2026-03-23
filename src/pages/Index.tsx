@@ -426,16 +426,15 @@ const Index = () => {
                 variants={scaleIn}
                 custom={i}
                 whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.2 } }}
-                className="glass-light rounded-2xl p-6 flex flex-col items-center gap-3 cursor-pointer group"
+                className="glass-light rounded-2xl p-4 sm:p-6 flex flex-col items-center gap-2 sm:gap-3 cursor-pointer group"
               >
-                <motion.div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center shadow-lg`}
-                  whileHover={{ rotate: 8, scale: 1.15, transition: { duration: 0.3 } }}
+                <div
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center shadow-lg`}
                 >
-                  <tech.icon className="w-6 h-6 text-white" />
-                </motion.div>
-                <span className="text-sm font-medium text-foreground">{tech.label}</span>
-                <span className="text-xs text-muted-foreground text-center leading-relaxed">{tech.desc}</span>
+                  <tech.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </div>
+                <span className="text-xs sm:text-sm font-medium text-foreground text-center">{tech.label}</span>
+                <span className="text-[0.65rem] sm:text-xs text-muted-foreground text-center leading-relaxed">{tech.desc}</span>
               </motion.div>
             ))}
           </motion.div>
