@@ -1,4 +1,5 @@
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useState, useEffect } from "react";
 
 interface ParticleFieldProps {
   count?: number;
@@ -6,11 +7,18 @@ interface ParticleFieldProps {
   className?: string;
 }
 
-/**
- * CSS-only animated particles for better mobile performance.
- */
 const ParticleField = ({ count = 12, color = "hsl(217, 91%, 60%)", className }: ParticleFieldProps) => {
   const isMobile = useIsMobile();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // Small delay to avoid flash of particles during initial render
+    const timer = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(timer);
+  }, []);
+
+  if (!mounted) return null;
+
   const actualCount = isMobile ? Math.min(count, 5) : count;
 
   const particles = Array.from({ length: actualCount }, (_, i) => {
