@@ -65,6 +65,7 @@ const apps = [
     gradient: "from-[#055ed1] to-[#3b8bff]",
     shadowColor: "shadow-[#055ed1]/20",
     features: ["Automatyzacja zamówień", "Integracja z dostawcami", "Analityka sprzedaży"],
+    link: "https://dropflow.dev",
   },
   {
     name: "Estats",
