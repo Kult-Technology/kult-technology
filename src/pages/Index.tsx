@@ -99,7 +99,7 @@ const Index = () => {
       <motion.section
         ref={heroRef}
         style={{ opacity: heroOpacity, scale: heroScale }}
-        className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+        className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 overflow-hidden"
       >
         <FloatingOrb className="w-72 h-72 bg-[#055ed1] -top-20 -left-20" delay={0} />
         <FloatingOrb className="w-96 h-96 bg-[#4ad7c7] -bottom-32 -right-20" delay={2} />
