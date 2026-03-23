@@ -41,19 +41,15 @@ const slideInRight = {
   }),
 };
 
-const FloatingOrb = ({ className, delay = 0 }: { className?: string; delay?: number }) => (
+const FloatingOrb = ({ className }: { className?: string }) => (
   <div
-    className={`absolute rounded-full blur-3xl opacity-0 pulse-glow ${className}`}
-    style={{
-      animationDelay: `${delay}s`,
-      animationFillMode: 'forwards',
-    }}
+    className={`absolute rounded-full blur-3xl pulse-glow ${className}`}
   />
 );
 
 
 const techStack = [
-  { icon: Brain, label: "AI / ML", color: "from-purple-500 to-violet-600", desc: "Sztuczna inteligencja i uczenie maszynowe" },
+  { icon: Brain, label: "AI", color: "from-purple-500 to-violet-600", desc: "Sztuczna inteligencja i uczenie maszynowe" },
   { icon: Cloud, label: "Cloud", color: "from-sky-400 to-blue-500", desc: "Infrastruktura chmurowa i DevOps" },
   { icon: Smartphone, label: "Aplikacje mobilne", color: "from-emerald-400 to-teal-500", desc: "Natywne i cross-platform aplikacje" },
   { icon: Globe, label: "Aplikacje webowe", color: "from-amber-400 to-orange-500", desc: "Nowoczesne aplikacje internetowe" },
@@ -69,6 +65,7 @@ const apps = [
     gradient: "from-[#055ed1] to-[#3b8bff]",
     shadowColor: "shadow-[#055ed1]/20",
     features: ["Automatyzacja zamówień", "Integracja z dostawcami", "Analityka sprzedaży"],
+    link: "https://dropflow.dev",
   },
   {
     name: "Estats",
@@ -101,9 +98,9 @@ const Index = () => {
         style={{ opacity: heroOpacity, scale: heroScale }}
         className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 overflow-hidden"
       >
-        <FloatingOrb className="w-72 h-72 bg-[#055ed1] -top-20 -left-20" delay={0} />
-        <FloatingOrb className="w-96 h-96 bg-[#4ad7c7] -bottom-32 -right-20" delay={2} />
-        <FloatingOrb className="w-48 h-48 bg-purple-400 top-1/3 right-1/4" delay={4} />
+        <FloatingOrb className="w-72 h-72 bg-[#055ed1]/[0.07] -top-20 -left-20" />
+        <FloatingOrb className="w-96 h-96 bg-[#4ad7c7]/[0.07] -bottom-32 -right-20" />
+        <FloatingOrb className="w-48 h-48 bg-purple-400/[0.07] top-1/3 right-1/4" />
         <ParticleField count={15} color="hsl(217, 91%, 60%)" />
 
         <motion.div
@@ -161,8 +158,8 @@ const Index = () => {
 
       {/* ========== ABOUT / MISSION — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
-        <FloatingOrb className="w-64 h-64 bg-[#055ed1] top-20 -right-20" delay={1} />
-        <FloatingOrb className="w-48 h-48 bg-[#4ad7c7] bottom-20 -left-10" delay={3} />
+        <FloatingOrb className="w-64 h-64 bg-[#055ed1]/[0.07] top-20 -right-20" />
+        <FloatingOrb className="w-48 h-48 bg-[#4ad7c7]/[0.07] bottom-20 -left-10" />
         <ParticleField count={10} color="hsl(174, 60%, 56%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
@@ -230,8 +227,8 @@ const Index = () => {
 
       {/* ========== APPS SECTION — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
-        <FloatingOrb className="w-80 h-80 bg-[#055ed1] -top-40 left-1/4" delay={0} />
-        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] bottom-0 right-1/4" delay={2.5} />
+        <FloatingOrb className="w-80 h-80 bg-[#055ed1]/[0.07] -top-40 left-1/4" />
+        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7]/[0.07] bottom-0 right-1/4" />
         <ParticleField count={10} color="hsl(217, 91%, 60%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
@@ -260,37 +257,44 @@ const Index = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {apps.map((app, i) => (
-              <motion.div
-                key={app.name}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={i === 0 ? slideInLeft : slideInRight}
-                custom={0}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className={`glass-light rounded-3xl p-8 cursor-pointer group transition-shadow duration-300 hover:shadow-2xl hover:${app.shadowColor}`}
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <motion.div
-                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center shadow-lg`}
-                    whileHover={{ scale: 1.15, rotate: 5, transition: { duration: 0.3 } }}
+            {apps.map((app, i) => {
+              const CardWrapper = app.link ? 'a' : 'div';
+              const linkProps = app.link ? { href: app.link, target: "_blank", rel: "noopener noreferrer" } : {};
+              return (
+                <motion.div
+                  key={app.name}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                  variants={i === 0 ? slideInLeft : slideInRight}
+                  custom={0}
+                  whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                >
+                  <CardWrapper
+                    {...linkProps}
+                    className={`block glass-light rounded-3xl p-8 cursor-pointer group transition-shadow duration-300 hover:shadow-2xl hover:${app.shadowColor} h-full`}
                   >
-                    <app.icon className="w-7 h-7 text-white" />
-                  </motion.div>
-                  <h3 className="text-xl font-semibold text-foreground">{app.name}</h3>
-                </div>
-                <p className="text-muted-foreground leading-relaxed mb-6">{app.description}</p>
-                <ul className="space-y-2">
-                  {app.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <ChevronRight className="h-3 w-3 text-[hsl(var(--dark-accent-blue))]" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+                    <div className="flex items-center gap-4 mb-6">
+                      <div
+                        className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[5deg]`}
+                      >
+                        <app.icon className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground">{app.name}</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed mb-6">{app.description}</p>
+                    <ul className="space-y-2">
+                      {app.features.map((feature) => (
+                        <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <ChevronRight className="h-3 w-3 text-[hsl(var(--dark-accent-blue))]" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardWrapper>
+                </motion.div>
+              );
+            })}
 
             <motion.div
               initial="hidden"
@@ -312,8 +316,8 @@ const Index = () => {
 
       {/* ========== PROCESS — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
-        <FloatingOrb className="w-56 h-56 bg-[#4ad7c7] top-10 -left-10" delay={1} />
-        <FloatingOrb className="w-72 h-72 bg-purple-500 bottom-10 -right-20" delay={3} />
+        <FloatingOrb className="w-56 h-56 bg-[#4ad7c7]/[0.07] top-10 -left-10" />
+        <FloatingOrb className="w-72 h-72 bg-purple-500/[0.07] bottom-10 -right-20" />
         <ParticleField count={8} color="hsl(174, 60%, 56%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
@@ -375,8 +379,8 @@ const Index = () => {
 
       {/* ========== TECH STACK — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
-        <FloatingOrb className="w-72 h-72 bg-purple-500 top-10 left-10" delay={1.5} />
-        <FloatingOrb className="w-56 h-56 bg-[#055ed1] bottom-20 right-10" delay={3.5} />
+        <FloatingOrb className="w-72 h-72 bg-purple-500/[0.07] top-10 left-10" />
+        <FloatingOrb className="w-56 h-56 bg-[#055ed1]/[0.07] bottom-20 right-10" />
         <ParticleField count={10} color="hsl(260, 60%, 60%)" />
 
         <div className="max-w-5xl mx-auto relative z-10">
@@ -444,8 +448,8 @@ const Index = () => {
 
       {/* ========== CTA — Dark ========== */}
       <section className="relative py-32 px-6 bg-[hsl(var(--dark-bg))] grid-pattern overflow-hidden">
-        <FloatingOrb className="w-80 h-80 bg-[#055ed1] -top-20 left-1/3" delay={0} />
-        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] bottom-0 right-1/4" delay={2} />
+        <FloatingOrb className="w-80 h-80 bg-[#055ed1]/[0.07] -top-20 left-1/3" />
+        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7]/[0.07] bottom-0 right-1/4" />
         <ParticleField count={8} color="hsl(217, 91%, 60%)" />
 
         <motion.div
@@ -484,7 +488,7 @@ const Index = () => {
 
       {/* ========== CONTACT — Light ========== */}
       <section className="relative py-32 px-6 bg-background overflow-hidden">
-        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7] -top-20 right-1/3" delay={0.5} />
+        <FloatingOrb className="w-64 h-64 bg-[#4ad7c7]/[0.07] -top-20 right-1/3" />
         <ParticleField count={8} color="hsl(174, 60%, 56%)" />
 
         <motion.div
