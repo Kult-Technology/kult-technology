@@ -257,37 +257,44 @@ const Index = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {apps.map((app, i) => (
-              <motion.div
-                key={app.name}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={i === 0 ? slideInLeft : slideInRight}
-                custom={0}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className={`glass-light rounded-3xl p-8 cursor-pointer group transition-shadow duration-300 hover:shadow-2xl hover:${app.shadowColor}`}
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <motion.div
-                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center shadow-lg`}
-                    whileHover={{ scale: 1.15, rotate: 5, transition: { duration: 0.3 } }}
+            {apps.map((app, i) => {
+              const CardWrapper = app.link ? 'a' : 'div';
+              const linkProps = app.link ? { href: app.link, target: "_blank", rel: "noopener noreferrer" } : {};
+              return (
+                <motion.div
+                  key={app.name}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                  variants={i === 0 ? slideInLeft : slideInRight}
+                  custom={0}
+                  whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                >
+                  <CardWrapper
+                    {...linkProps}
+                    className={`block glass-light rounded-3xl p-8 cursor-pointer group transition-shadow duration-300 hover:shadow-2xl hover:${app.shadowColor} h-full`}
                   >
-                    <app.icon className="w-7 h-7 text-white" />
-                  </motion.div>
-                  <h3 className="text-xl font-semibold text-foreground">{app.name}</h3>
-                </div>
-                <p className="text-muted-foreground leading-relaxed mb-6">{app.description}</p>
-                <ul className="space-y-2">
-                  {app.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <ChevronRight className="h-3 w-3 text-[hsl(var(--dark-accent-blue))]" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+                    <div className="flex items-center gap-4 mb-6">
+                      <div
+                        className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[5deg]`}
+                      >
+                        <app.icon className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground">{app.name}</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed mb-6">{app.description}</p>
+                    <ul className="space-y-2">
+                      {app.features.map((feature) => (
+                        <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <ChevronRight className="h-3 w-3 text-[hsl(var(--dark-accent-blue))]" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardWrapper>
+                </motion.div>
+              );
+            })}
 
             <motion.div
               initial="hidden"
