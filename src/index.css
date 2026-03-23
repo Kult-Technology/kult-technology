@@ -134,8 +134,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.15; filter: blur(40px); }
-  50% { opacity: 0.3; filter: blur(60px); }
+  0%, 100% { opacity: 0.12; filter: blur(40px); transform: scale(1); }
+  50% { opacity: 0.25; filter: blur(60px); transform: scale(1.08); }
 }
 
 .particle-drift-1 {
@@ -147,7 +147,18 @@
 }
 
 .pulse-glow {
-  animation: pulse-glow 6s ease-in-out infinite;
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+/* Reduce animations on mobile for performance */
+@media (prefers-reduced-motion: reduce), (max-width: 768px) {
+  .particle-drift-1,
+  .particle-drift-2 {
+    animation-duration: 20s;
+  }
+  .pulse-glow {
+    animation-duration: 12s;
+  }
 }
 
 /* Grid pattern for dark sections */
