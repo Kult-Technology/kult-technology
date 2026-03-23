@@ -43,10 +43,10 @@ const slideInRight = {
 
 const FloatingOrb = ({ className, delay = 0 }: { className?: string; delay?: number }) => (
   <div
-    className={`absolute rounded-full blur-3xl pulse-glow ${className}`}
+    className={`absolute rounded-full blur-3xl opacity-0 pulse-glow ${className}`}
     style={{
       animationDelay: `${delay}s`,
-      willChange: 'opacity, filter',
+      animationFillMode: 'forwards',
     }}
   />
 );
