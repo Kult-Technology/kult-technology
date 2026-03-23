@@ -134,8 +134,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.12; transform: scale(1); }
-  50% { opacity: 0.25; transform: scale(1.08); }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
 .particle-drift-1 {

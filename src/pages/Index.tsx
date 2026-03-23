@@ -49,7 +49,7 @@ const FloatingOrb = ({ className }: { className?: string }) => (
 
 
 const techStack = [
-  { icon: Brain, label: "AI / ML", color: "from-purple-500 to-violet-600", desc: "Sztuczna inteligencja i uczenie maszynowe" },
+  { icon: Brain, label: "AI", color: "from-purple-500 to-violet-600", desc: "Sztuczna inteligencja i uczenie maszynowe" },
   { icon: Cloud, label: "Cloud", color: "from-sky-400 to-blue-500", desc: "Infrastruktura chmurowa i DevOps" },
   { icon: Smartphone, label: "Aplikacje mobilne", color: "from-emerald-400 to-teal-500", desc: "Natywne i cross-platform aplikacje" },
   { icon: Globe, label: "Aplikacje webowe", color: "from-amber-400 to-orange-500", desc: "Nowoczesne aplikacje internetowe" },
