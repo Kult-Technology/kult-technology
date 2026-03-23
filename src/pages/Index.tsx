@@ -42,18 +42,11 @@ const slideInRight = {
 };
 
 const FloatingOrb = ({ className, delay = 0 }: { className?: string; delay?: number }) => (
-  <motion.div
-    className={`absolute rounded-full blur-3xl opacity-20 ${className}`}
-    animate={{
-      y: [0, -30, 0, 20, 0],
-      x: [0, 15, -10, 20, 0],
-      scale: [1, 1.15, 0.95, 1.1, 1],
-    }}
-    transition={{
-      duration: 10,
-      repeat: Infinity,
-      delay,
-      ease: "easeInOut",
+  <div
+    className={`absolute rounded-full blur-3xl pulse-glow ${className}`}
+    style={{
+      animationDelay: `${delay}s`,
+      willChange: 'opacity, filter',
     }}
   />
 );
@@ -106,7 +99,7 @@ const Index = () => {
       <motion.section
         ref={heroRef}
         style={{ opacity: heroOpacity, scale: heroScale }}
-        className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+        className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 overflow-hidden"
       >
         <FloatingOrb className="w-72 h-72 bg-[#055ed1] -top-20 -left-20" delay={0} />
         <FloatingOrb className="w-96 h-96 bg-[#4ad7c7] -bottom-32 -right-20" delay={2} />
@@ -433,16 +426,15 @@ const Index = () => {
                 variants={scaleIn}
                 custom={i}
                 whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.2 } }}
-                className="glass-light rounded-2xl p-6 flex flex-col items-center gap-3 cursor-pointer group"
+                className="glass-light rounded-2xl p-4 sm:p-6 flex flex-col items-center gap-2 sm:gap-3 cursor-pointer group"
               >
-                <motion.div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center shadow-lg`}
-                  whileHover={{ rotate: 8, scale: 1.15, transition: { duration: 0.3 } }}
+                <div
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center shadow-lg`}
                 >
-                  <tech.icon className="w-6 h-6 text-white" />
-                </motion.div>
-                <span className="text-sm font-medium text-foreground">{tech.label}</span>
-                <span className="text-xs text-muted-foreground text-center leading-relaxed">{tech.desc}</span>
+                  <tech.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </div>
+                <span className="text-xs sm:text-sm font-medium text-foreground text-center">{tech.label}</span>
+                <span className="text-[0.65rem] sm:text-xs text-muted-foreground text-center leading-relaxed">{tech.desc}</span>
               </motion.div>
             ))}
           </motion.div>
